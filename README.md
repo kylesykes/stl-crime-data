@@ -27,28 +27,27 @@ Police Departments website](http://www.slmpd.org/Crimereports.shtml).  The data 
 |AdministrativeAdjustmentIndicator |   string  | Y/N, indicates whether the entry was adjusted by an admin.  An administrative adjustment indicates a change in crime classification |
 |CADAddress                        |   string  | Address number where incident occured as reported by 911 caller |
 |CADStreet                         |   string  | Stree name where incident occured as reported by 911 caller |
-|CodedMonth                        |   string  | YYYY-mm ; Year and month reported for some fields (incomplete)|
-|Complaint                         |   string  |  |
+|CodedMonth                        |   string  | YYYY-mm ; Year and month reported for some fields (incomplete, see Issue #9)|
+|Complaint                         |   string  |  (Unique?) Number assigned to incident|
 |Count                             |   int64   | Integer representing how the crime affects the total crime number.  **Summing on this column will give you the total number of crimes**|
 |Crime                             |   string  | 6-digit crime code, as defined by Uniform Crime Reporting guidelines |
 |DateOccured                       |   string  | Date the incident was reported to have occured|
 |Description                       |   string  | Description of the crime described by 'Crime' column |
 |District                          |   int64   | 1-9; indicates which police district a crime was reported in|
-|FlagAdministrative                |   string  | |
-|FlagCleanup                       |   string  | |
-|FlagCrime                         |   string  | |
-|FlagUnfounded                     |   string  | |
+|FlagAdministrative                |   string  | Y/N|
+|FlagCleanup                       |   string  | Y/N|
+|FlagCrime                         |   string  | Y/N|
+|FlagUnfounded                     |   string  | Y/N|
 |ILEADSAddress                     |   string  | Address number logged on official police report |
 |ILEADSStreet                      |   string  | Street name logged on official police report |
 |LocationComment                   |   string  | Additional comments about the location |
-|LocationName                      |   string  | Additional information to help identify location (St. Louis Zoo, 
-Scottrade Center, etc.)|
-|MonthReportedtoMSHP               |   string  | |
-|Neighborhood                      |   int64   | |
-|NewCrimeIndicator                 |   string  | |
-|UnfoundedCrimeIndicator           |   string  | |
-|XCoord                            |   float64 | |
-|YCoord                            |   float64 | |
-|NeighborhoodName                  |   string  | |
-|NeighborhoodPrimaryDistrict       |   float64 | |
-|NeighborhoodAddlDistrict          |   float64 | |
+|LocationName                      |   string  | Additional information to help identify location (St. Louis Zoo, Scottrade Center, etc.)|
+|MonthReportedtoMSHP               |   string  | YYYY-mm ; Year and month reported for some fields (incomplete, see Issue #9)|
+|Neighborhood                      |   int64   | Number representing neighborhood incident was reported in|
+|NewCrimeIndicator                 |   string  | Y/N |
+|UnfoundedCrimeIndicator           |   string  | Y/N |
+|XCoord                            |   float64 | X-Coordinates in State Plane NAD83 format|
+|YCoord                            |   float64 | Y-Coordinates in State Plane NAD83 format|
+|NeighborhoodName                  |   string  | Neighborhood name, matched from 'Neighborhood'|
+|NeighborhoodPrimaryDistrict       |   float64 | Primary police district the neighborhood lies in|
+|NeighborhoodAddlDistrict          |   float64 | Additional police districts that the neighborhood might be in|
