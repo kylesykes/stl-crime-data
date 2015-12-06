@@ -24,30 +24,29 @@ Police Departments website](http://www.slmpd.org/Crimereports.shtml).  The data 
 |  Column | Format  | Description  |
 |---|---|---|
 |FileName                          |   string  | File name correspoding to the raw_data file where the row originated from |
-|AdministrativeAdjustmentIndicator |   string  | Y/N, indicates whether the entry was adjusted by an admin.  An administrative adjustment indicates a change in crime classification |
-|CADAddress                        |   string  | Address number where incident occured as reported by 911 caller |
-|CADStreet                         |   string  | Stree name where incident occured as reported by 911 caller |
-|CodedMonth                        |   string  | YYYY-mm ; Year and month reported for some fields (incomplete, see Issue #9)|
-|Complaint                         |   string  |  (Unique?) Number assigned to incident|
-|Count                             |   int64   | Integer representing how the crime affects the total crime number.  **Summing on this column will give you the total number of crimes**|
+|CADAddress                        |   string  | Address number where incident occured as reported by 911 caller.  *Not as accurate as the corresponding ILEADSAddress* |
+|CADStreet                         |   string  | Stree name where incident occured as reported by 911 caller. *Not as accurate as the corresponding ILEADSAddress*|
+|CodedMonth                        |   string  | YYYY-mm ; Year and month reported for some fields |
+|Complaint                         |   string  | Number assigned to incident (possibly unique?) |
+|Count                             |   int64   | Integer representing how the crime affects the total crime number.  **Summing on this column will give you the total number of crimes** |
 |Crime                             |   string  | 6-digit crime code, as defined by Uniform Crime Reporting guidelines |
+|ShortCrimeCode                    |   string  | First two digits in 'Crime'|
+|UCRType                           |   int64   | 1 or 2, denotes the type of crime as denoted by the Uniform Crime Reporting guidelines.  Type 1 crimes are typically much worse than Type 2 Crimes|
+|UCRCrime                          |   string  | High Level crime categories |
 |DateOccured                       |   string  | Date the incident was reported to have occured|
 |Description                       |   string  | Description of the crime described by 'Crime' column |
 |District                          |   int64   | 1-9; indicates which police district a crime was reported in|
-|FlagAdministrative                |   string  | Y/N|
-|FlagCleanup                       |   string  | Y/N|
-|FlagCrime                         |   string  | Y/N|
-|FlagUnfounded                     |   string  | Y/N|
+|FlagAdministrative                |   string  | Y/N flag to denote an administrative edit (usually to the crime code)|
+|FlagCleanup                       |   string  | Y/N flag to denote some sort of cleanup (never been flagged as of October 2015) |
+|FlagCrime                         |   string  | Y/N flag to denote the incident as a new crime (versus reporting a crime that happened in the past) |
+|FlagUnfounded                     |   string  | Y/N flag to denote if the incident was unfounded |
 |ILEADSAddress                     |   string  | Address number logged on official police report |
 |ILEADSStreet                      |   string  | Street name logged on official police report |
 |LocationComment                   |   string  | Additional comments about the location |
 |LocationName                      |   string  | Additional information to help identify location (St. Louis Zoo, Scottrade Center, etc.)|
-|MonthReportedtoMSHP               |   string  | YYYY-mm ; Year and month reported for some fields (incomplete, see Issue #9)|
 |Neighborhood                      |   int64   | Number representing neighborhood incident was reported in|
-|NewCrimeIndicator                 |   string  | Y/N |
-|UnfoundedCrimeIndicator           |   string  | Y/N |
-|XCoord                            |   float64 | X-Coordinates in State Plane NAD83 format|
-|YCoord                            |   float64 | Y-Coordinates in State Plane NAD83 format|
 |NeighborhoodName                  |   string  | Neighborhood name, matched from 'Neighborhood'|
-|NeighborhoodPrimaryDistrict       |   float64 | Primary police district the neighborhood lies in|
-|NeighborhoodAddlDistrict          |   float64 | Additional police districts that the neighborhood might be in|
+|NeighborhoodPrimaryDistrict       |   float64 | Primary police district the neighborhood lies in |
+|NeighborhoodAddlDistrict          |   float64 | Additional police districts that the neighborhood might be in |
+|Latitude                          |   float64 | Latitude coordinates in WSG84 |
+|Longitude                         |   float64 | Latitude coordinates in WSG84 |
